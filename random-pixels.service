@@ -1,0 +1,14 @@
+[Unit]
+Description=random-pixels
+After=network.target
+
+[Service]
+User=ubuntu
+Type=simple
+Restart=always
+WorkingDirectory=/home/ubuntu/random-pixels
+Environment="PATH=/home/ubuntu/random-pixels/venv/bin"
+ExecStart=/home/ubuntu/random-pixels/venv/bin/python /home/ubuntu/random-pixels/main.py
+
+[Install]
+WantedBy=multi-user.target
